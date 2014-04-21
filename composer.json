@@ -1,0 +1,21 @@
+{
+    "name": "kotchuprik/laravel-pretty-dump",
+    "keywords": ["laravel", "pretty-print", "var-dump"],
+    "homepage": "http://github.com/kotchuprik/laravel-pretty-dump",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Constantin Chuprik",
+            "email": "constantinchuprik@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "kotchuprik\\PrettyDump\\": ""
+        }
+    },
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "minimum-stability": "dev"
+}
