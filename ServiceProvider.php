@@ -5,20 +5,19 @@
 
 namespace kotchuprik\PrettyDump;
 
-use \Illuminate\Support\ServiceProvider;
+use Illuminate\Foundation\AliasLoader;
+use Illuminate\Support\Facades\Blade;
 
-class PrettyDumpServiceProvider extends ServiceProvider
+class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
-    protected $defer = false;
-
     public function register()
     {
         $this->app['prettyDump'] = $this->app->share(function ($app) {
-            return new PrettyDumper();
+            return new Dumper();
         });
 
         $this->app->booting(function () {
-            \Illuminate\Foundation\AliasLoader::getInstance()->alias('PrettyDump', 'PrettyDumpFacade');
+            AliasLoader::getInstance()->alias('PrettyDump', 'kotchuprik\PrettyDump\Facade');
         });
 
         Blade::extend(function ($view, $compiler) {
@@ -30,7 +29,6 @@ class PrettyDumpServiceProvider extends ServiceProvider
 
     public function provides()
     {
-        return ['prettyDump'];
+        return array('prettyDump');
     }
 }
- 

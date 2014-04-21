@@ -5,7 +5,7 @@
 
 namespace kotchuprik\PrettyDump;
 
-class PrettyDumper
+class Dumper
 {
     public function dump($value)
     {
